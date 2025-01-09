@@ -1,0 +1,39 @@
+
+abstract class Application
+{
+    public abstract void login(String email, String pwd);
+    public abstract void login(long mob, String pwd);
+    public abstract void login(long mob, int otp);
+}
+class Instagram extends Application
+{
+    @Override
+    public void login(String email, String pwd) 
+    {
+        System.out.println("Succesfully loggedin with the email-id and password");
+    }
+    @Override
+    public void login(long mob, String pwd) 
+    {
+        System.out.println("Succesfully loggedin with the mobile number and password");
+    }
+    @Override
+    public void login(long mob, int otp) 
+    {
+        System.out.println("Succesfully loggedin with the mobile number and OTP");
+    }
+
+
+}
+    public class TestInstagram
+    {
+        public static void main(String[] args)
+        {
+            Application a = new Instagram();
+            a.login("biswarup.paul880@gmail.com", "abcd123");
+            a.login(9038381982l, "abcd123");
+            a.login(9038381982l, 2345);
+        }
+                    
+        
+    }
